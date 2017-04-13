@@ -1,0 +1,372 @@
+/* Eléments principaux de la page */
+
+body
+{
+    background: #CED8F6;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #181818;
+    width: 80%;
+    padding-left: 100px;
+}
+
+#bloc_page
+{
+    width: 90%;
+    margin: auto;
+}
+
+.section h1, footer h1, nav a
+{
+    font-family: Arial, serif;
+    font-weight: normal;
+	font-style : italic;
+    text-transform: uppercase;
+	margin-top: 40px;
+}
+
+
+
+
+/* Header */
+
+header
+{
+    background: url('img/separateur.png') repeat-x bottom;
+	border-radius: 20px;
+}
+
+header h1
+{
+    font-family: Arial, serif;
+    font-size: 2.5em;
+    font-weight: normal;
+	display: inline-block;
+	margin-left: 30px;
+    margin-bottom: 0;
+}
+
+#logo
+{
+    display: inline-block;
+    margin-bottom: 0;
+	border-radius: 5px;
+	box-shadow: 0 4px 4px #1c1a19;
+	width: 100px;
+}
+
+header h2
+{
+    font-family: Arial, serif;
+    font-size: 1.1em;
+    margin-top: 0;
+	margin-left : 215px;
+    font-weight: normal;
+}
+
+/* Navigation */
+
+nav
+{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+}
+
+nav ul
+{
+    list-style-type: none;
+}
+
+nav li
+{
+    display: inline-block;
+    margin-right: 3px;
+	padding: 7px;
+	background: #DFEFFF;
+	border: 1px solid black;
+	border-radius: 10px;
+    transition: background, border 300ms;
+}
+
+nav li:hover
+{
+	background: #C1D5E0;
+    border-radius: 15px;
+    transition: all 300ms;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+/* Bannière */
+
+#banniere_image
+{
+    margin-top: 15px;
+    height: 166px;
+    border-radius: 5px;
+    background: url('img/banner.jpg') no-repeat center top;
+    position: relative;
+}
+
+#banniere_description
+{
+    position: absolute;
+    bottom: 0;
+    border-radius: 5px;
+    width: 99.6%;
+    height: 33px;
+    padding-top: 15px;
+    padding-left: 5px;
+    background-color: rgba(24,24,24,0.8);
+    color: white;
+    font-size: 0.8em;
+}
+
+.bouton_rouge
+{
+    display: inline-block;
+    height: 25px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    background: url('img/fond_degraderouge.png') repeat-x;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 3px 8px 0 8px;
+    color: white;
+    text-decoration: none;
+    transition: color 1s;
+}
+
+.bouton_rouge:hover
+{
+    color: black;
+    transition: color 1s;
+}
+
+.bouton_rouge img
+{
+    border: 0;
+}
+
+/* Corps */
+
+.back
+{
+    position: fixed;
+    top: 80px;
+    left: 10px;
+    border: black 2px solid;
+    border-radius: 30px 30px 50px 50px;
+    transition: border-radius 400ms, background 1s;
+}
+
+.back:hover
+{
+    background: white;
+    border-radius: 20px 20px 60px 60px;
+    transition: all 700ms;
+}
+
+
+.back img
+{
+    width: 100px;
+}
+
+/* Corps CV */
+
+.section
+{
+
+}
+
+.cv, .aside
+{
+    vertical-align: top;
+    text-align: justify;
+}
+
+.tiret
+{
+	clear: both;
+	width: 100%;
+	height: 1px;
+	margin-top: 15px;
+	border: 0 none;
+}
+
+.cv
+{
+    margin-right: 15px;
+}
+
+.cv h3
+{
+	margin-bottom: 0;
+}
+
+.cv i
+{
+	font-size: 1em;
+	color: grey;
+}
+
+.ico_categorie
+{
+    width: 44px;
+	vertical-align: middle;
+    margin-right: 8px;
+}
+
+.cv div
+{
+    font-size: 0.8em;
+}
+
+.aside
+{
+    position: absolute;
+    right: 10px;
+    width: 30%;
+    background-color: #3C3E44;
+    box-shadow: 0 2px 5px #1c1a19;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+}
+
+.aside h1
+{
+    font-size: 1.5em;
+}
+
+#photo
+{
+    text-align: center;
+}
+
+#photo img
+{
+    border: 1px solid #181818;
+    width: 200px;
+}
+
+.aside img
+{
+    margin-right: 5px;
+}
+
+.aside table
+{
+	border: 2px solid white;
+	width: 90%;
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 8px;
+	box-shadow: 6px 5px 4px #1c1a19;
+}
+
+caption
+{
+	font-size:1.2em;
+	text-align: right;
+	font-style: italic;
+	margin-bottom: 5px;
+	text-transform: uppercase;
+
+}
+
+td
+{
+	background: grey;
+}
+
+td:hover
+{
+	background: #3C3E44;
+}
+
+td:active
+{
+	background: black;
+}
+
+table a
+{
+	color: white;
+	text-decoration: none;
+}
+
+table a:hover
+{
+	color: #F78181;
+}
+
+
+.bouton  a
+{
+	display:block;
+	width:150px;
+	line-height: 28px;
+	text-align:center;
+	vertical-align:middle;
+	background: url('img/fond_degraderouge.png') repeat-x;
+	color: white;
+	text-decoration:none;
+	border: 1px solid #760001;
+	border-radius:10px;
+    transition: all 1s;
+}
+.bouton a:hover
+{
+	background: linear-gradient(#ffbcbc,#c70606);
+	color: black;
+    transition: all 1s;
+}
+.bouton a:active
+{
+	box-shadow: 1px 1px 10px black inset,
+	0 1px 0 rgba( 255, 255, 255, 0.4);
+}
+
+textarea
+{
+    width: 90%;
+    height: 200px;
+}
+
+form div
+{
+    text-align: center;
+    margin: 10px;
+}
+
+input#nom, input#mail
+{
+    width: 30%;
+}
+
+
+/* Footer */
+
+footer
+{
+    padding-top: 25px;
+	margin-top: 50px;
+}
+
+footer div
+{
+	font-size: 0.8em;
+	text-align: center;
+}

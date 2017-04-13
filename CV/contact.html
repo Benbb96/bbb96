@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Contact</title>
+    </head>
+
+    <body>
+        <div id="bloc_page">
+            <header>
+                <div>
+                    <img src="img/LogoLyon1.jpg" id="logo" />
+                    <h1>Contact</h1>
+					<h2>Vous souhaitez me joindre ?</h2>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="CV.html">Mon CV</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <div id="banniere_image">
+                <div id="banniere_description">
+                    Site de l'iut Lyon 1
+                    <a href="http://iut.univ-lyon1.fr/" target="_blank" class="bouton_rouge">Voir le site <img src="img/flecheblanchedroite.png"/></a>
+                </div>
+            </div>
+
+            <div class="back">
+                <a href="../index.php"><img src="../img/logo_bbb96.png"></a>
+            </div>
+
+			<section>
+				<H1>
+					  <span class="marge">Me contacter</span>
+				</H1>
+						<form method="post" action="message.php" name="contact">
+                            <fieldset>
+                                <legend>Remplissez le formulaire ci-dessous</legend>
+                                <div>
+                                    <label for="nom">Votre nom/pseudo :</label>
+                                    <input type="text" name="nom" id="nom" maxlength="50" autofocus>
+                                </div>
+                                <div>
+                                    <label for="mail">Votre adresse mail :</label>
+                                    <input type="email" name="mail" id="mail" maxlength="50"></div>
+                                <div>
+                                    <label for="message">Votre message :</label><br />
+                                    <textarea name="message" id="message"></textarea>
+                                </div>
+                                <div>
+                                    <label>Comment avez-vous trouvé ce site ?</label>
+                                    <input type="radio" name="sondage" id="1" value="Très bien">
+                                    <label for="1">Très bien</label>
+                                    <input type="radio" name="Sondage" id="2" value="Moyen">
+                                    <label for="2">Moyen</label>
+                                    <input type="radio" name="sondage" id="3" value="Pas terrible">
+                                    <label for="3">Pas terrible</label>
+                                </div>
+                                <div>
+                                    <input type="submit" value="Envoyer"> <input type="reset" value="Effacer">
+                                </div>
+                            </fieldset>
+						</form>
+			</section>
+			
+            <footer>
+                <div>Site web réalisé par Benjamin</div>
+                <div>
+                    <a href="https://www.facebook.com/pages/bbb96/300476429405" target="_blank"><img src="../img/icons/Facebook-icon.png"></a>
+                    <a href="https://www.youtube.com/user/thebasketteurbbb96" target="_blank"><img src="../img/icons/Youtube-icon.png"></a>
+                    <a href="https://twitter.com/Benbb96" target="_blank"><img src="../img/icons/Twitter-icon.png"></a>
+                    <a href="http://instagram.com/benbb96/" target="_blank"><img src="../img/icons/Instagram-icon.png"></a>
+                    <a href="http://benbb96.tumblr.com/" target="_blank"><img src="../img/icons/Tumblr-icon.png"></a>
+                    <a href="https://www.linkedin.com/profile/view?id=381232789" target="_blank"><img src="../img/icons/LinkedIn-icon.png"></a>
+                </div>
+				<div><a href="../index.php">Retour à la racine</a></div>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,81 @@
+/* Eléments principaux de la page */
+
+body
+{
+    background: #BEBEBE;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #181818;
+}
+
+a:link
+{
+    text-decoration: none;
+}
+
+/* Header */
+
+header
+{
+    text-align: center;
+}
+
+header img
+{
+    width: 400px;
+}
+
+/* Corps */
+
+.sous-titre
+{
+    color: #444;
+    font-size: 1.5em;
+}
+
+table{
+    margin-top: 44px;
+}
+
+.border
+{
+    border-right: solid 2px black;
+}
+
+th {
+    font-size: 1.8em;
+    padding: 5px;
+    text-align: center;
+    border-bottom: solid 2px black;
+}
+
+td
+{
+    padding: 10px 30px;
+}
+
+
+/* Footer */
+
+footer
+{
+    padding-top: 25px;
+	margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+footer div
+{
+	text-align: center;
+}
+
+footer div a
+{
+    margin: 0;
+    transition: margin 600ms;
+}
+
+footer div a:hover
+{
+    margin: 0 13px;
+    transition: margin 300ms;
+}
