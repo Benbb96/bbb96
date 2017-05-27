@@ -5,7 +5,7 @@ require_once('../connexion.php');
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
-    <title>Page réservé</title>
+    <title>One Shot</title>
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet"/>
 </head>

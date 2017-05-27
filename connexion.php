@@ -1,9 +1,9 @@
-﻿<?php
+<?php
 
 // Crée la connexion à la bdd en fonction de si on est sur le local ou sur le site free.fr
 
 if( file_exists("C:/Users/Ben") ) {
-	define("__LOCAL_PATH__", "http://localhost/bbb");
+	define("__LOCAL_PATH__", "http://localhost/bbb96");
 	$host = 'localhost';
 	$dbname = 'bbb';
 	$pseudo = 'root';

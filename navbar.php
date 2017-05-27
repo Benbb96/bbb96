@@ -16,6 +16,9 @@
             <li <?php if (isset($oneShot)) { ?>class="active"<?php } ?>>
                 <a href="<?php echo __LOCAL_PATH__; ?>/projets/one-shot.php">One Shot</a>
             </li>
+            <li <?php if (isset($gamestoric)) { ?>class="active"<?php } ?>>
+                <a href="<?php echo __LOCAL_PATH__; ?>/projets/gamestoric/index.php">GameStoric</a>
+            </li>
         </ul>
     </div>
 </nav>
