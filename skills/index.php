@@ -55,7 +55,7 @@ if (isset($_GET['delete']) and !empty($_GET['delete'])) {
 						</a>
 					</td>
 					<td class="col-lg-2 text-center"><?php echo $competence['lieu']; ?></td>
-					<td class="col-lg-2 text-center"><?php echo $competence['date_debut']; ?></td>
+					<td class="col-lg-2 text-center"><?php $date = new DateTime($competence['date_debut']); echo $date->format('d/m/Y'); ?></td>
 					<td class="col-lg-2 text-center">
                         <a href="modifier.php?id=<?php echo $competence['id']; ?>">
 						    <button class="btn-block">

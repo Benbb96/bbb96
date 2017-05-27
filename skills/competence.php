@@ -65,7 +65,8 @@ $reponse->closeCursor();
 						<?php if (is_null($competence['date_fin'])) {
 							echo "à Aujourd'hui";
 						} else {
-							echo 'au ' . $competence['date_fin'];
+							$dateFin = new DateTime($competence['date_fin']);
+							echo 'au ' . $dateFin->format('d/m/Y');
 						}?>
 					</div>
 					<div class="col-lg-4 col-lg-offset-1">
