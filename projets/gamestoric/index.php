@@ -51,21 +51,6 @@ include('../../navbar.php');
     <h1>GameStoric</h1>
     <div class="row">
 
-        <?php if (!$_SESSION['connected']) { ?>
-        <div class="panel-danger col-lg-5">
-            <div class="panel-heading">Veuillez saisir le mot de passe pour accéder à cette page.</div>
-            <div class="panel-body">
-                <form class="form-inline" action="index.php" method="post">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password"
-                               placeholder="Mot de passe">
-                    </div>
-                    <button type="submit" class="btn btn-default">Ok</button>
-                </form>
-            </div>
-        </div>
-        <?php } else { ?>
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked">
                 <li class="active"><a href="index.php">Home</a></li>
@@ -77,6 +62,21 @@ include('../../navbar.php');
         <div class="col-md-9">
 
             <div class="row">
+                <?php if (!$_SESSION['connected']) { ?>
+                    <div class="panel-danger">
+                        <div class="panel-heading">Veuillez saisir le mot de passe pour pouvoir ajouter des matchs.</div>
+                        <div class="panel-body">
+                            <form class="form-inline" action="index.php" method="post">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input id="password" type="password" class="form-control" name="password"
+                                           placeholder="Mot de passe">
+                                </div>
+                                <button type="submit" class="btn btn-default">Ok</button>
+                            </form>
+                        </div>
+                    </div>
+                <?php } else { ?>
                 <h2>Ajouter un nouveau match</h2>
 
                 <?php if($success) { ?>
@@ -137,8 +137,8 @@ include('../../navbar.php');
                     <button class="btn btn-block btn-primary">Valider</button>
                 </form>
             </div>
+            <?php } ?>
         </div>
-        <?php } ?>
 
     </div>
 </div>

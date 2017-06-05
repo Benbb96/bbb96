@@ -7,7 +7,7 @@ require_once('verification.php');
 <html lang="fr">
 <head>
     <meta charset="utf-8" />
-    <title>GameStoric</title>
+    <title>Matchs</title>
     <link href="../../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../css/style.css" rel="stylesheet"/>
 </head>
@@ -23,21 +23,6 @@ include('../../navbar.php');
     <h1>GameStoric</h1>
     <div class="row">
 
-        <?php if (!$_SESSION['connected']) { ?>
-        <div class="panel-danger col-lg-5">
-            <div class="panel-heading">Veuillez saisir le mot de passe pour accéder à cette page.</div>
-            <div class="panel-body">
-                <form class="form-inline" action="index.php" method="post">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                        <input id="password" type="password" class="form-control" name="password"
-                               placeholder="Mot de passe">
-                    </div>
-                    <button type="submit" class="btn btn-default">Ok</button>
-                </form>
-            </div>
-        </div>
-        <?php } else { ?>
         <div class="col-md-3">
             <ul class="nav nav-pills nav-stacked">
                 <li><a href="index.php">Home</a></li>
@@ -61,19 +46,29 @@ include('../../navbar.php');
                 </thead>
                 <tbody>
                 <?php
-                $reponse = $bdd->query('SELECT game.id_j1, j1.pseudo as "pseudo1", score_j1, game.id_j2, j2.pseudo as "pseudo2", score_j2, datetime, comment, game.id
+                if (isset($_GET['page'])) {
+                    $page = intval($_GET['page']);
+                } else {
+                    $page = 1;
+                }
+                $reponse = $bdd->prepare('SELECT game.id_j1, j1.pseudo as "pseudo1", score_j1, game.id_j2, j2.pseudo as "pseudo2", score_j2, datetime, comment, game.id
                                         FROM game
                                         INNER JOIN joueur j1 ON j1.id = game.id_j1
                                         INNER JOIN joueur j2 ON j2.id = game.id_j2
                                         ORDER BY datetime DESC
-                                        LIMIT 20');
+                                        LIMIT :limit OFFSET :offset;');
+                $limit = 10;
+                $offset = $page * $limit - $limit;
+                $reponse->bindParam(':limit', $limit, PDO::PARAM_INT);
+                $reponse->bindParam(':offset', $offset, PDO::PARAM_INT);
+                $reponse->execute();
                 while ($match = $reponse->fetch()) { ?>
                     <tr class="text-center">
-                        <td class="col-md-2"><?php echo $match['pseudo1']; ?></td>
+                        <td class="col-md-2"><a href="joueur.php?id=<?php echo $match['id_j1']; ?>"><?php echo $match['pseudo1']; ?></a></td>
                         <td class="col-md-2">
                             <span class="badge"><?php echo $match['score_j1']; ?></span>
                         </td>
-                        <td class="col-md-2"><?php echo $match['pseudo2']; ?></td>
+                        <td class="col-md-2"><a href="joueur.php?id=<?php echo $match['id_j2']; ?>"><?php echo $match['pseudo2']; ?></a></td>
                         <td class="col-md-2">
                             <span class="badge"><?php echo $match['score_j2']; ?></span>
                         </td>
@@ -83,8 +78,28 @@ include('../../navbar.php');
                 <?php } ?>
                 </tbody>
             </table>
+            <div class="row text-center">
+                <ul class="pagination">
+                    <?php
+                    $req = $bdd->query('SELECT count(*) FROM game');
+                    $req->execute();
+                    $totalMatch= $req->fetch()[0];
+                    // arrondi au supérieur du nombre de match divisé par la limit
+                    $nbPage = ceil($totalMatch / $limit);
+                    ?>
+                    <li <?php if($page == 1) echo 'class="disabled"'; ?>><a href="match.php?page=<?php echo $page -1; ?>">&laquo;</a></li>
+                    <?php
+                    $i = 1;
+                    while ($i <= $nbPage) { ?>
+                    <li <?php if($page == $i) echo 'class="active"'; ?>><a href="match.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+                    <?php
+                    $i++;
+                    }
+                    ?>
+                    <li <?php if($page == $nbPage) echo 'class="disabled"'; ?>><a href="match.php?page=<?php echo $page +1; ?>">&raquo;</a></li>
+                </ul>
+            </div>
         </div>
-        <?php } ?>
 
     </div>
 </div>
